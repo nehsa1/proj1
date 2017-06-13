@@ -7,37 +7,38 @@
 		<artifactId>webproj-pom</artifactId>
 	    <version>1.0</version>
 	</parent>
-	<artifactId>com.nehsa.web</artifactId>
+	
+	<artifactId>com.nehsa.service</artifactId>
 	<version>1.0</version>
-	<packaging>war</packaging>
-	<name>com.nehsa.web</name>
+	<packaging>jar</packaging>
+	<name>com.nehsa.service</name>
 	
 	<dependencies>
-		<dependency> 
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.nehsa</groupId>
 			<artifactId>com.nehsa.domain</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.nehsa</groupId>
-			<artifactId>com.nehsa.dao</artifactId>
-			<version>1.0</version>
+		    <groupId>org.glassfish.jersey.core</groupId>
+		    <artifactId>jersey-server</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.nehsa</groupId>
-			<artifactId>com.nehsa.server</artifactId>
-			<version>1.0</version>
+		    <groupId>org.glassfish.jersey.media</groupId>
+		    <artifactId>jersey-media-json-jackson</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.nehsa</groupId>
-			<artifactId>com.nehsa.service</artifactId>
-			<version>1.0</version>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-servlet-core</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+		</dependency>
 	</dependencies>
-		
+	
+	<build>
+		<finalName>${artifactId}-${version}</finalName>
+	</build>
+	
 </project>
